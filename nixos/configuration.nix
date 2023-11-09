@@ -102,6 +102,15 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable firewall
+  networking.firewall.enable = true;
+
+  # Enable the OpenSSH daemon.
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = true;
+  };
+
   # Set your time zone.
   time.timeZone = "America/Halifax";
 

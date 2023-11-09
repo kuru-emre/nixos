@@ -50,11 +50,16 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
+
+  # Enable Git
   programs.git = {
     enable = true;
     userName  = "kurue";
     userEmail = "kuru.emre@hotmail.com";
   };
+
+  # Enable Github CLI
+  programs.gh.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
