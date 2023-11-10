@@ -108,7 +108,7 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    passwordAuthentication = true;
+    settings.PasswordAuthentication = true;
   };
 
   # Set your time zone.
@@ -171,10 +171,14 @@
       kate
       thunderbird
     ];
+    shell = pkgs.zsh;
   };
 
   # GTK support
   programs.dconf.enable = true;
+
+  # Enable zsh
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -189,6 +193,10 @@
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
     plasma-browser-integration
     khelpcenter
+  ];
+
+  fonts.packages = with pkgs; [
+    cascadia-code
   ];
 
   # This value determines the NixOS release from which the default

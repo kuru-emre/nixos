@@ -44,6 +44,15 @@
     homeDirectory = "/home/kurue";
   };
 
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      home-update = "home-manager switch --flake /home/kurue/nix-config/#kurue@kurue-lenovo";
+      system-update = "sudo nixos-rebuild switch --flake /home/kurue/nix-config/#kurue-lenovo";
+    };
+  };
+  
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
