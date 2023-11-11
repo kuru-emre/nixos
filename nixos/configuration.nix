@@ -150,10 +150,20 @@
       kate
       thunderbird
     ];
+    shell = pkgs.zsh; # default shell for the user
   };
 
   # GTK support
   programs.dconf.enable = true;
+
+  # Enable zsh support
+  programs.zsh.enable = true;
+
+  # Fonts for terminal
+  fonts.packages = with pkgs; [
+    cascadia-code
+    meslo-lgs-nf
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

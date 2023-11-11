@@ -61,6 +61,28 @@
   # Enable Github CLI
   programs.gh.enable = true;
 
+  # Enable zsh and plugins
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      home-update = "home-manager switch --flake /home/kurue/nix-config/#kurue@kurue-dell";
+      system-update = "sudo nixos-rebuild switch --flake /home/kurue/nix-config/#kurue-dell";
+    }; 
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
+    # initExtra = ''[[ ! -f .p10k.zsh ]] || source .p10k.zsh'';
+    # zplug = {
+    #   enable = true;
+    #   plugins = [
+    #     { name = "zsh-users/zsh-autosuggestions"; }
+    #     { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } 
+    #   ];
+    # };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
