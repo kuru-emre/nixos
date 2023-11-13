@@ -50,6 +50,11 @@
       home-update = "home-manager switch --flake /home/kurue/nix-config/#kurue@kurue-lenovo";
       system-update = "sudo nixos-rebuild switch --flake /home/kurue/nix-config/#kurue-lenovo";
     };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
   };
   
 

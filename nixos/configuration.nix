@@ -197,6 +197,7 @@
 
   fonts.packages = with pkgs; [
     cascadia-code
+    meslo-lgs-nf
   ];
 
   # This value determines the NixOS release from which the default
